@@ -63,49 +63,22 @@ The schedule below is tentative and is subject to change.
 | 4  [09/17]         | [Dijkstra search][3] |  |
 | 5  [09/24]         | [Dijkstra search][3] |  |
 | 6  [10/01]         | [Heuristic search][4] |  |
-| 7  [10/08]         | [Heuristic search][5] |  |
-| 8  [10/15]         | [Minimax][6] |  |
-| 9  [10/22]         | [Minimax][7] |  |
-| 10 [10/29]         | [Alpha-beta pruning][8] |  |
-| 11 [11/05]         | [Alpha-beta pruning][9] |  |
-| 12 [11/12]         | [Monte Carlo Tree Search][10] |  |
-| 13 [11/19]         | [Monte Carlo Tree Search][11] |  |
+| 7  [10/08]         | [Heuristic search][4] |  |
+| 8  [10/15]         | [Minimax][5] |  |
+| 9  [10/22]         | [Minimax][5] |  |
+| 10 [10/29]         | [Alpha-beta pruning][6] |  |
+| 11 [11/05]         | [Alpha-beta pruning][6] |  |
+| 12 [11/12]         | [Monte Carlo Tree Search][7] |  |
+| 13 [11/19]         | [Monte Carlo Tree Search][7] |  |
 | 14 [11/26]         | Thanks Giving Holiday | No class |
-| 15 [12/03]         | [Project][12] |
-| Final [12/10]      | [Final][13] |  |
+| 15 [12/03]         | [Project][8] |  |
+| Final [12/10]      | [Project][8] |  |
 
-* Lecture 1: [9/26] [Introduction](documents/notes/introduction.md) (Eric/John)
-
-* Lecture 2: [10/3] No class due to Senior Design Event (Eric will be in classroom if anyone needs any assistance for exercise)
-
-* Lecture 3: [10/10] [Graph representation](documents/notes/graph-representation.md) (Eric)
-
-* Lecture 4: [10/17] [Brute Force](documents/notes/general-search.md), e.g. BFS & DFS (Eric)
-
-* Lecture 5: [10/24] [Heuristic Search](documents/notes/advanced-search.md), e.g. A\* (John)
-    * **HW1: Graph Representation due**
-
-* Lecture 6: [10/31] [More Search](documents/notes/dijkstra-algorithm.md), e.g. Dijkstra's Algorithm (Eric)
-    * **HW2: General Search due Saturday Nov 7th 9am**
-    * **Q1: Representation & Brute Force [take home] due at Monday Nov 2nd midnight**
-
-* Lecture 7: [11/7] [Min-max](documents/notes/min-max.md) (Eric)
-    * *Homework 3 announcement*
-    * **Q2: Heuristic Search**
-
-* Lecture 8: [Alpha-Beta pruning](documents/notes/alpha-beta-pruning.md) (John)
-    * **HW3: Heuristic Search due Wednesday midnight Nov 25th**
-
-* Lecture 9: [11/21] [Min-max & Alpha-Beta continued](documents/notes/alpha-beta-pruning-coninued.md) (John, Eric)
-    * Q3: Minimax && Alpha-Beta **due on Sunday night Nov 22th**
-    * [Homework 4 announcement](documents/homeworks/homework4.md) **Due at beginning of class at Dec 5th (9am)**
-    * [Project Preparation online](documents/final-project/project.md)
-
-* Holiday: [11/28] No class due to Thanks Giving, Happy Turkey day!
-
-* Lecture 10: [12/5] Last day of class
-    * In class tournament
-    * Q4
-    * **HW4: Search Optimization due**
-
-* Final: Activity - In class tournament continue (with presentation to show me what you have done) (Have fun!) (Eric/John)
+[1]: notes/introduction.md
+[2]: notes/graph-representation.md
+[3]: notes/dijkstra.md
+[4]: notes/heuristic-search.md
+[5]: notes/minimax.md
+[6]: notes/alpha-beta-pruning.md
+[7]: notes/monte-carlo-tree-search.md
+[8]: notes/project.md
