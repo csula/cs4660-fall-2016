@@ -60,18 +60,18 @@ The schedule below is tentative and is subject to change.
 | 1  [08/27]         | [Introduction][1] | Set up environment |
 | 2  [09/03]         | [Graph representation][2] |  |
 | 3  [09/10]         | [Graph representation][2] |  |
-| 4  [09/17]         | [Dijkstra search][3] |  |
+| 4  [09/17]         | [Dijkstra search][3] | Homework 1, Quiz 1 |
 | 5  [09/24]         | [Dijkstra search][3] |  |
 | 6  [10/01]         | [Heuristic search][4] |  |
 | 7  [10/08]         | [Heuristic search][4] |  |
-| 8  [10/15]         | [Minimax][5] |  |
+| 8  [10/15]         | [Minimax][5] | Homework 2, Quiz 2 |
 | 9  [10/22]         | [Minimax][5] |  |
-| 10 [10/29]         | [Alpha-beta pruning][6] |  |
+| 10 [10/29]         | [Alpha-beta pruning][6] | Homework 3 |
 | 11 [11/05]         | [Alpha-beta pruning][6] |  |
-| 12 [11/12]         | [Monte Carlo Tree Search][7] |  |
+| 12 [11/12]         | [Monte Carlo Tree Search][7] | Quiz 3 |
 | 13 [11/19]         | [Monte Carlo Tree Search][7] |  |
 | 14 [11/26]         | Thanks Giving Holiday | No class |
-| 15 [12/03]         | [Project][8] |  |
+| 15 [12/03]         | [Project][8] | Homework 4, Quiz 4 |
 | Final [12/10]      | [Project][8] |  |
 
 [1]: notes/introduction.md
