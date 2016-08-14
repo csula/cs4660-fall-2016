@@ -9,9 +9,15 @@
 
 - **Instructor** Hsiang-Yu (Eric) Liao [rcliao01@gmail.com](mailto:rcliao01@gmail.com)
 - **Lecture** Saturday 8:00 AM to 10:45 AM
-- **Office Hours** Saturday 10:45 AM to 11:45 AM
+- **Office Hours** Saturday 10:45 AM to 12:00 PM
+- **Office Hours Location** Either at the classroom (E&T A309 or library -- see notes below)
 - **Location** E&T A309
 - **Text Book** None as we will have all notes hosted on Github.
+
+> As the university notice, we (part-time lecturers) can use the library room --
+Palmer Wing room 2097 -- for the office hour purpose.
+
+> Thus, if you don't find me at the classroom, please find me at library.
 
 ## Course Objectives
 
@@ -36,11 +42,11 @@
 * A: 94 to 100
 * A-: 90 to 93
 * B+: 85 to 89
-* B: 80 to 84  
+* B: 80 to 84
 **Graduate students are required to obtain a grade 80 or above to pass the course**
 * B-: 77 to 79
 * C+: 74 to 76
-* C: 70 to 73  
+* C: 70 to 73
 **Undergraduate students are required to obtain a grade 70 or above to pass the course**
 
 ## ADA Statement
