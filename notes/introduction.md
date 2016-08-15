@@ -40,6 +40,11 @@ AI can often be seen as an uncertainty management.
 
 In other word, "what would you do when you don't know what to do?"
 
+### Recommended reading
+
+* https://en.wikipedia.org/wiki/Intelligent_agent
+
+---
 
 ### Environment setup
 
