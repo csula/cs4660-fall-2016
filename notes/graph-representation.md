@@ -92,7 +92,7 @@ Reference: [Wikipedia - Abstract data structure][wiki-graph]
 * Strategy pattern (Representation interface)
 * Factory pattern (again Representation interface with static `of` method)
 
-### [Homework 1](../homeworks/homework1.md)
+### [Homework 1](homeworks/homework1.md)
 
 Finish remaining code for graph package
 
