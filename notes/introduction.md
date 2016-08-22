@@ -44,66 +44,16 @@ In other word, "what would you do when you don't know what to do?"
 
 * https://en.wikipedia.org/wiki/Intelligent_agent
 
----
+## Environment setup
 
-### Environment setup
+Follow the note to set up Java and Gradle -- https://github.com/csula/Utilities/blob/master/setups/java-gradle-setup.md
 
-As this class will be one of those heavy programming class, we will need to set up environment at the starting of course.
+And follow the note to set up Git/Github -- https://github.com/csula/Utilities/blob/master/setups/git-github-notes.md
 
-#### Java
+## Wrap Up Java Review Exercise
 
-Install [OracleJDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) if you don't already have one.
-
-##### Windows User
-
-Click on the link above (OracleJDK 8) to install Java 8. Upon completion of
-installation, please set up the `JAVA_HOME` path as well.
-
-##### Mac User
-
-You can install [brew](http://brew.sh/) and follow the following to install Java 8.
-
-```sh
-brew tap caskroom/cask
-brew install brew-cask
-brew cask install java
-```
-
-#### Gradle
-
-Install [gradle](https://gradle.org/) as this will be our primary build tool.
-
-##### Windows User
-
-Click on the link above and install Gradle accordingly.
-
-##### Mac User
-
-Install via `brew install gradle` assuming you have `brew` installed.
-
-##### Linux User
-
-* CentOS users can follow the instruction found in [Github Gist](https://gist.github.com/parzonka/9371885).  
-* Ubuntu users take a look at the [Ask Ubuntu Stack Exchange Tutorial](https://askubuntu.com/questions/328178/gradle-in-ubuntu).
-
-#### Github
-
-* [Sign up Github account](https://github.com/) if you don't already have one
-
-After finished above two tasks, please download [git](https://git-scm.com/) or
-[Github client](https://desktop.github.com/) for you to do source control.
-
-##### Recommended readings for leaning Git/github
-
-Please read through some of the following readings and have clear understanding of
-Github/git in order to commit & push your code for code submission.
-
-* https://help.github.com/articles/good-resources-for-learning-git-and-github/
-* [Github cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf)
-
-#### Wrap Up Java Review Exercise
-
-[Repository invitation -- click here to be invited to have your own repository](https://classroom.github.com/assignment-invitations/e65c8c059ca93d69dfdcf0e6569e59a0)
+Once you set up the above two dependencies, please do this wrap up exercise to
+test your local environment setup!
 
 Since not everyone has experience of using Github/git before, we will go over
 in class exercise to demonstrate how you should submit your assignment in future.
@@ -124,7 +74,7 @@ You may start reading through the source code folder for some starting point of 
 If you have trouble pushing to your own repository under your workspace
 
 ```bash
-git remote set-url origin {Your repository url} # https://github.com/csula/exercise-1-amit70.git for example
+git remote set-url origin {Your repository url} # https://github.com/csula/cs4660-fall-2016-exercise-1-rcliao.git for example
 git commit -a # will open text editor for you to enter commit message
 git push # push to origin server (which will be your repository)
 ```
