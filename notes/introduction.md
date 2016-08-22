@@ -18,8 +18,8 @@ Welcome to introduction to AI course!
 AI is basically an **intelligent agent** that makes decisions based on its sensors
 and use actuators to mutate environment.
 
-An example of the intelligent agent would be financial agent. They can get the
-stock market information (sensors) and use it to make trades (actuators).
+An example of the intelligent agent would be *financial agent*. They can get the
+stock market information (**sensors**) and use it to make trades (**actuators**).
 
 The **decisions** it involves between the information from sensors to actions of
 actuators is the key of AI.
@@ -27,18 +27,37 @@ actuators is the key of AI.
 This entire loop of sensors getting information to making decisions from AI algorithm
 and to actions of actuators is often called **Perception-Action cycle**.
 
+Perception-Action cycle is what we (Artificial Intelligence developers) are usually
+interested of implementing.
+
 ### Terminologies
 
+Following terminologies will be focus on the environment types:
+
 * Fully vs partially observables
+  * Fully means your agent can fully observe all variables of environment (e.g. chess)
+  * Partially observables means your agent can only observe part of the environment (e.g. Starcraft, self-driving car)
 * Deterministic vs stochastic
+  * Deterministic means haves no random effects (like chess -- each moves determines next state deterministically)
+  * Stochastic means having some random outcomes (like games involves dices rolling)
 * Discrete vs continuous
+  * Number of states in games is countable (discrete) and not-countable (continuous)
 * Benign vs adversarial
+  * Environment goes against you (benign) like Chess (environment -- your opponent -- is trying to defeat you)
+  * Or environment is just there (like weather effect for selv-driving car)
 
 ### Summary
 
 AI can often be seen as an uncertainty management.
 
 In other word, "what would you do when you don't know what to do?"
+
+In example, we cant possibly create an imperative program that predicts every single
+state for self-driving car or Go.
+
+But how do our agents handle the situation it hasn't seen or programmed to do?
+
+Artificial intelligence is to create such algorithm to do general problem solving.
 
 ### Recommended reading
 
