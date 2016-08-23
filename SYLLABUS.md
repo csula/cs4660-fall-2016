@@ -9,7 +9,7 @@
 
 - **Instructor** Hsiang-Yu (Eric) Liao [rcliao01@gmail.com](mailto:rcliao01@gmail.com)
 - **Lecture** Saturday 8:00 AM to 10:45 AM
-- **Office Hours** Saturday 10:45 AM to 12:00 PM
+- **Office Hours** Saturday 10:45 AM to 12:00 PM or online 24/7
 - **Office Hours Location** Either at the classroom (E&T A309 or library -- see notes below)
 - **Location** E&T A309
 - **Text Book** None as we will have all notes hosted on Github.
