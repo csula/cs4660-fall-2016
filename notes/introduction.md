@@ -97,3 +97,8 @@ git remote set-url origin {Your repository url} # https://github.com/csula/cs466
 git commit -a # will open text editor for you to enter commit message
 git push # push to origin server (which will be your repository)
 ```
+
+Click here to set your repository -- https://classroom.github.com/assignment-invitations/d81e544ad4dc4b205f3ae61d41824625
+
+1. Push your code to that repository.
+2. Paste link to CSNS "Your repository" section
