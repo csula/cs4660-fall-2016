@@ -283,6 +283,8 @@ Reference on the data structure overview: https://github.com/thejameskyle/itsy-b
 
 ### Graph Components
 
+![](imgs/graph_diagram.png)
+
 * Node (Sometimes called Vertex)
 * Edge
 * Graph
