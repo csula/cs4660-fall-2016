@@ -5,11 +5,17 @@ import csula.cs4660.models.Node;
 
 import java.io.File;
 import java.util.List;
+import java.util.Optional;
 
 /**
- * Created by eric on 8/27/16.
+ * Adjacency matrix in a sense store the nodes in two dimensional array
+ *
+ * TODO: please fill the method body of this class
  */
 public class AdjacencyMatrix implements Representation {
+    private Node[] nodes;
+    private int[][] adjacencyMatrix;
+
     public AdjacencyMatrix(File file) {
     }
 
@@ -50,5 +56,10 @@ public class AdjacencyMatrix implements Representation {
     @Override
     public int distance(Node from, Node to) {
         return 0;
+    }
+
+    @Override
+    public Optional<Node> getNode(int index) {
+        return null;
     }
 }

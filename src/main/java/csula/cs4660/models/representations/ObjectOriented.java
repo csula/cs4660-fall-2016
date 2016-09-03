@@ -4,12 +4,20 @@ import csula.cs4660.models.Edge;
 import csula.cs4660.models.Node;
 
 import java.io.File;
+import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 /**
- * Created by eric on 8/27/16.
+ * Object oriented representation of graph is using OOP approach to store nodes
+ * and edges
+ *
+ * TODO: Please fill the body of methods in this class
  */
 public class ObjectOriented implements Representation {
+    private Collection<Node> nodes;
+    private Collection<Edge> edges;
+
     public ObjectOriented(File file) {
     }
 
@@ -50,5 +58,10 @@ public class ObjectOriented implements Representation {
     @Override
     public int distance(Node from, Node to) {
         return 0;
+    }
+
+    @Override
+    public Optional<Node> getNode(int index) {
+        return null;
     }
 }

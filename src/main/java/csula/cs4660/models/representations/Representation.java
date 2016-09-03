@@ -5,7 +5,11 @@ import csula.cs4660.models.Node;
 
 import java.io.File;
 import java.util.List;
+import java.util.Optional;
 
+/**
+ * Interface to define common behaviors across different representations
+ */
 public interface Representation {
     enum STRATEGY {
         ADJACENCY_LIST,
@@ -57,6 +61,8 @@ public interface Representation {
     boolean removeEdge(Edge x);
 
     int distance(Node from, Node to);
+
+    Optional<Node> getNode(int index);
 
     String toString();
 }
