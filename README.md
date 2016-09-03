@@ -1,5 +1,7 @@
 # CS-4660 Artificial Intelligence.
 
+[![Build Status](https://travis-ci.org/csula/cs4660-fall-2016.svg?branch=master)](https://travis-ci.org/csula/cs4660-fall-2016)
+
 Welcome to CS-4660 -- the introduction to Artificial Intelligence (AI).
 
 We will learn a couple approaches of solving general problems by utilizing Graph
