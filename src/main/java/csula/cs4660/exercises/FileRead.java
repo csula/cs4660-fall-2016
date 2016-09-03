@@ -28,6 +28,7 @@ public class FileRead {
                 for (String token: line.split(" ")) {
                     lineNumbers.add(Integer.parseInt(token));
                 }
+                System.out.println(line);
                 listOfNumbers.add(lineNumbers);
             });
         } catch (IOException e) {
@@ -68,7 +69,7 @@ public class FileRead {
         for (int i : numbers[lineNumber]) {
             sum += i;
         }
-        return sum;
+        return 0;
     }
 
     private int[][] converList(List<List<Integer>> arrayList) {
