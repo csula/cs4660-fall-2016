@@ -1,7 +1,7 @@
-package csula.cs4660.models.representations;
+package csula.cs4660.graphs.representations;
 
-import csula.cs4660.models.Edge;
-import csula.cs4660.models.Node;
+import csula.cs4660.graphs.Edge;
+import csula.cs4660.graphs.Node;
 
 import java.io.File;
 import java.util.List;

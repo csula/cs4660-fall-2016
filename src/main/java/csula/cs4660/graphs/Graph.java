@@ -1,6 +1,6 @@
-package csula.cs4660.models;
+package csula.cs4660.graphs;
 
-import csula.cs4660.models.representations.Representation;
+import csula.cs4660.graphs.representations.Representation;
 
 import java.util.List;
 import java.util.Optional;

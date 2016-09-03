@@ -1,4 +1,4 @@
-package csula.cs4660.models;
+package csula.cs4660.graphs;
 
 /**
  * The fundamental class to hold data

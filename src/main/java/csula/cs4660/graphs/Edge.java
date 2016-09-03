@@ -1,4 +1,4 @@
-package csula.cs4660.models;
+package csula.cs4660.graphs;
 
 public class Edge {
     private Node from;

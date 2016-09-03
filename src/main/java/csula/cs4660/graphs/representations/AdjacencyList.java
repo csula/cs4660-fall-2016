@@ -1,27 +1,27 @@
-package csula.cs4660.models.representations;
+package csula.cs4660.graphs.representations;
 
-import csula.cs4660.models.Edge;
-import csula.cs4660.models.Node;
+import csula.cs4660.graphs.Edge;
+import csula.cs4660.graphs.Node;
 
 import java.io.File;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 /**
- * Object oriented representation of graph is using OOP approach to store nodes
- * and edges
+ * Adjacency list is probably the most common implementation to store the unknown
+ * loose graph
  *
- * TODO: Please fill the body of methods in this class
+ * TODO: please implement the method body
  */
-public class ObjectOriented implements Representation {
-    private Collection<Node> nodes;
-    private Collection<Edge> edges;
+public class AdjacencyList implements Representation {
+    private Map<Node, Collection<Edge>> adjacencyList;
 
-    public ObjectOriented(File file) {
+    public AdjacencyList(File file) {
     }
 
-    public ObjectOriented() {
+    public AdjacencyList() {
 
     }
 
