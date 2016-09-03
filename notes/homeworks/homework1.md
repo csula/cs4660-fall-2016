@@ -2,9 +2,11 @@
 
 ## Important note
 
-Before you start this homework, be sure to click [here to start homework repository]()
+Before you start this homework, be sure to click [here to start homework repository](https://classroom.github.com/assignment-invitations/d81e544ad4dc4b205f3ae61d41824625)
 
-> Note that this repository will be private and only be yours, please don't share your code out to your colleague(s). Sharing code will be considered as cheating and thus will be graded as zero for both parties.
+> Note that this repository will be private and only be yours, please don't share
+> your code out to your colleague(s). Sharing code will be considered as cheating
+> and thus will be graded as zero for both parties.
 
 ## Description
 
@@ -15,7 +17,7 @@ Before you start this homework, be sure to click [here to start homework reposit
 
 In this homework, you will start your assignment just like exercise before. You will need to read from file, parse information line by line and store them correctly. Eventually, you will implement methods to use those variables.
 
-You will need to implement/modify three files (`AdjacencyList.java`, `AdjacencyMatrix.java` and `ObjectOriented.java` under `src/main/java/edu/csula/cs460/graph/strategy`).
+You will need to implement/modify three files (`AdjacencyList.java`, `AdjacencyMatrix.java` and `ObjectOriented.java` under `src/main/java/csula/cs460/graphs/strategy`).
 
 In these three classes, you will be implementing similar methods for graph (e.g. `adjacent`, `neighbors` or `addNode` ... etc. you can check these method description out under `Graph.java`) but with different data structure.
 
