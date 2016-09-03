@@ -1,27 +1,25 @@
-package csula.cs4660.models.representations;
+package csula.cs4660.graphs.representations;
 
-import csula.cs4660.models.Edge;
-import csula.cs4660.models.Node;
+import csula.cs4660.graphs.Edge;
+import csula.cs4660.graphs.Node;
 
 import java.io.File;
-import java.util.Collection;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 /**
- * Adjacency list is probably the most common implementation to store the unknown
- * loose graph
+ * Adjacency matrix in a sense store the nodes in two dimensional array
  *
- * TODO: please implement the method body
+ * TODO: please fill the method body of this class
  */
-public class AdjacencyList implements Representation {
-    private Map<Node, Collection<Edge>> adjacencyList;
+public class AdjacencyMatrix implements Representation {
+    private Node[] nodes;
+    private int[][] adjacencyMatrix;
 
-    public AdjacencyList(File file) {
+    public AdjacencyMatrix(File file) {
     }
 
-    public AdjacencyList() {
+    public AdjacencyMatrix() {
 
     }
 

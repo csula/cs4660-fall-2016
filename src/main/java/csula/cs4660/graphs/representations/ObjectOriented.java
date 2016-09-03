@@ -1,25 +1,27 @@
-package csula.cs4660.models.representations;
+package csula.cs4660.graphs.representations;
 
-import csula.cs4660.models.Edge;
-import csula.cs4660.models.Node;
+import csula.cs4660.graphs.Edge;
+import csula.cs4660.graphs.Node;
 
 import java.io.File;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
 /**
- * Adjacency matrix in a sense store the nodes in two dimensional array
+ * Object oriented representation of graph is using OOP approach to store nodes
+ * and edges
  *
- * TODO: please fill the method body of this class
+ * TODO: Please fill the body of methods in this class
  */
-public class AdjacencyMatrix implements Representation {
-    private Node[] nodes;
-    private int[][] adjacencyMatrix;
+public class ObjectOriented implements Representation {
+    private Collection<Node> nodes;
+    private Collection<Edge> edges;
 
-    public AdjacencyMatrix(File file) {
+    public ObjectOriented(File file) {
     }
 
-    public AdjacencyMatrix() {
+    public ObjectOriented() {
 
     }
 
