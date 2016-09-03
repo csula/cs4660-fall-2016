@@ -335,10 +335,15 @@ Graph has different types such as below:
 > Dense graph: graph has a lot more edges than vertices (defined as `|E| = O(|V|)` where |E| is number of edges and |V| is number of vertices)  
 > Sparse graph: graph has relative fewer edges than vertices (defined as `|E| = Θ(|V^2|)`)
 
-
 ### Graph as Abstract Data Structure
 
+Like data structures, within graph as data structure. We also have different
+data structure to implement graph and of course different algorithms to implement
+each method accordingly.
+
 #### 3 ways to represent graph in programming
+
+There are usually 3 common ways to represent graph internally
 
 1. Adjacency Matrix
   * ![](imgs/adjacency-matrix-undirect.png)
@@ -346,10 +351,10 @@ Graph has different types such as below:
   * ![](imgs/adjacency-list.png)
 3. Object Oriented (objects and pointers)
 
-
-> With the complexity analysis below, be sure to know pros and cons for each one
-
 #### Complexity Analysis
+
+Same as data structure, each representation is better at *something*. Best way to
+analyze the use case for each representation is by Big-O Notations:
 
 | \ | Adjacency List | Adjacency Matrix | Object Oriented |
 | :-- | :-- | :-- | :-- |
@@ -363,16 +368,14 @@ Graph has different types such as below:
 
 Reference: [Wikipedia - Abstract data structure][wiki-graph]
 
-### Graph Traversal Algorithms Overview
+## Further Learning
 
-* **Breadth First Search** (BFS)
-* **Depth First Search** (DFS)
-* A-star
-* Dijkstra
-* Alpha-beta
-* Min-max
+### [Test-Driven-Development][tdd]
 
-## Learning
+1. Write test
+2. Fail and cry
+3. Fix
+4. Rinse and repeat
 
 ### [Design Pattern][design-pattern] in action
 
@@ -381,8 +384,6 @@ Reference: [Wikipedia - Abstract data structure][wiki-graph]
 
 ### [Homework 1](homeworks/homework1.md)
 
-Finish remaining code for graph package
-
-
 [wiki-graph]: https://en.wikipedia.org/wiki/Graph_(abstract_data_type)
 [design-pattern]: https://github.com/iluwatar/java-design-patterns
+[tdd]: http://agiledata.org/essays/tdd.html
