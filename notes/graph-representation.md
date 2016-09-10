@@ -693,6 +693,30 @@ Performance standard
 +-------------------------------------+    +----+
 ```
 
+While utility based agent may be able to generate very rational action but it may
+take a lot of work to achieve perfect action. Later on, Tuning (1950) proposed
+to build a learning machines and then teach them. In many area of AI, this is now
+the preferred method for creating state-of-the-art systems.
+
+### Summary
+
+* An agent is something that perceives and acts in an environment. The agent
+function for an agent specifies the action taken by the agent in response to any
+percept sequence.
+* The performance measure evaluates the behavior of the agent in an environment.
+rational agent acts so as to maximize the expected value of the performance measure,
+given the percept sequence it has seen so far.
+* Environment vary along several significant dimensions. They can be fully or
+partially observable, deterministic or stochastic, discrete or continuos
+* The agent program implements the agent function. There exists a variety of
+basic agent-program designs reflecting the kind of information made explicit and
+used in the decision making.
+* Simple reflex agents respond directly to percepts, whereas model-based reflex
+agents maintain internal state to track aspects of the world that are not
+evident in the current percept. Goal-based agents act to achieve their goals, and
+utility-based agents try to maximize their own expected "happiness"
+* All agents can improve their performance through learning.
+
 ## Further Learning
 
 ### [Test-Driven-Development][tdd]
