@@ -717,6 +717,88 @@ evident in the current percept. Goal-based agents act to achieve their goals, an
 utility-based agents try to maximize their own expected "happiness"
 * All agents can improve their performance through learning.
 
+### After thought
+
+So how does Graph as data structure comes into the intelligent agents?
+
+One can certain think of Graph as data structure to build the model (for past
+and future information). In example, each node will hold the state and each edge
+would be an action agent can choose from. Using such model will help the agent
+to select the best action.
+
+And an intelligent agent's job is to maximize the performance measure.
+
+From next class, we will start to learn how to use Graph as data structure to
+search for best solution.
+
+Our discussion of problem solving begins with precise definitions of problems and
+their solutions.
+
+We will beginning by looking at several uniformed search algorithms -- algorithms
+that are given no information about problem other than its definitions -- and
+informed search algorithms -- given some guidance on where to look for solutions.
+
+### Well-defined problems and solutions
+
+```js
+function simpleProblemSolvingAgent(percept) {
+  // seq, an action sequence, initiall empty
+  var seq = [];
+  // state, some description of the current world state
+  var state = updateState(state, percept);
+  // goal, a goal, initially null
+  var goal = null;
+  // problem, a problem formulation
+  if (!seq) {
+    goal = formulateGoal(state);
+    problem = formulateProblem(state, goal);
+    seq = search(problem);
+    if (seq == FAILURE) {
+      return null;
+    }
+  }
+  action = seq.pop(); // first item of sequence of actions
+  return action;
+}
+```
+
+A problem can be defined formally by five components:
+
+* The initial state that agent starts in.
+* A description of the possible actions available to the agent.
+* A description on what each action does; formal name for this is transition model
+* The goal test, which determines whether a given state is a goal state.
+* A path cost function that assigns a numeric cost to each path.
+
+Together, the initial state, actions, and the transition model implicitly define
+the state space of the problem -- the set of all states reachable from the initial
+state by any sequence of actions. The state space forms a directed graph in which
+the nodes are states and the links between nodes are actions.
+
+And a solution to a problem is an action sequence that leads from the initial state
+to a goal state. Solution quality is measured by the path cost function, and an
+optimal solution has the lowest path cost among all solutions.
+
+### Formulating problems
+
+To represent any given problem from real world, we have to learn how to abstract
+problem into the state space (by removing detail from the representation).
+
+I called this process of formulating problems as knowledge representation.
+
+**Examples**
+
+Lets consider [8-puzzle](http://mypuzzle.org/sliding):
+
+* States: a state description specifies the location of each of the eight tiles
+and the blank in the one of the nine squares
+* Initial state: Any state can be designated as the initial state.
+* Actions: The simplest formulation defines the actions as movements of the blank
+space -- LEFT, RIGHT, UP or DOWN.
+* Transition model: Given state and action, this returns the resulting state
+* Goal test: This checks whether the state matches the goal configuration
+* Path cost: Each step would cost 1
+
 ## Further Learning
 
 ### [Test-Driven-Development][tdd]
