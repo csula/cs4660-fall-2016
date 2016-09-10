@@ -368,6 +368,331 @@ analyze the use case for each representation is by Big-O Notations:
 
 Reference: [Wikipedia - Abstract data structure][wiki-graph]
 
+### Rational Agent
+
+We talked about a couple terminologies last week about intelligent agents and
+types of environments. Following section will further explain what intelligent
+agents are and how they couple with environments.
+
+To recap, an intelligent agent is  about perceiving its environment through
+sensors and acting upon that environment through actuators.
+
+An rational agent is the one that does the right thing.
+
+What is right? What is a right thing to do?
+
+We will answer this by considering the *consequences* of agent's behavior. When
+agent is plunked down in an environment, it generates a sequence of actions according
+to the percepts it receives. If the sequence is desirable, then the agent has
+performed well.
+
+The notion of desirability is captured by a **performance measure** that evaluates
+any given sequence of environment states.
+
+Noticed that we said *environment* states, not *agent* states. If we define
+success in terms of agent's opinion of its own performance, an agent could achieve
+perfect rationality simply by deluding itself that its performance was perfect.
+
+![this is fine](https://i.imgur.com/c4jt321.png)
+
+Now, it's hard to define a fixed performance measure for all tasks and agents;
+typically, a designer will devise one appropriate to the circumstances. As a
+general rule, it is better to design performance measures according to what one
+actually wants in the environment, rather than according to how one thinks the
+agent should behave.
+
+Now back to rational agent, what is considered rational are given on four things:
+
+* The performance measure that defines the criterion of success
+* The agent's prior knowledge of the environment
+* The actions that agent can perform
+* The agent's percept sequence to date
+
+This leads to a definition of a rational agent:
+
+For each possible percept sequence, a rational agent should select an action that
+is expected to maximize its performance measure, given the evidence provided by
+the percept sequence and whatever built-in knowledge the agent has.
+
+### Omniscience
+
+Rationality and omniscience are different. An omniscience agent knows the actual
+outcome of its actions and can act accordingly; but omniscience is impossible
+in reality.
+
+In other word, with omniscience agent, you can perform **perfect** sequence of
+actions because you know the outcome.
+
+Rational agent, however, maximizes the expected performance, while perfection
+maximizes actual performance.
+
+Our definition earlier about rational agent doesn't require omniscience. We must
+ensure that we haven't inadvertently allowed the agent to engage in decidedly
+underintelligent activities. For example, cross a busy road without looking!
+
+Doing actions in order to modify future percepts -- sometimes called information
+gathering -- is important part of rationality.
+
+Our definition of rational agent also requires a rational agent not only to gather
+information but also to learn as much as possible from what it perceives. In other
+word, agent's initial configuration could reflect some prior knowledge of the
+environment, but as the agent gains experience this may be modified and augmented.
+
+To the extent that an agent relies on the prior knowledge of its designer rather
+than its own percepts, we say that the agent lacks autonomy. An agent should be
+autonomous -- it should learn what it can to compensate for partial or incorrect
+prior knowledge.
+
+### Structure of Agents
+
+So far, we talked about the agents by describing its behavior -- the action that
+is performed after any given sequence of percepts. Now we must talk about how the
+insides work. The job of AI is to design an agent program that implements the agent
+function -- the mapping from percepts to actions.
+
+### Agent programs
+
+The agent programs we designed in this class will all be in the same format:
+
+They take the *current* percept as the input from the sensors and return an action
+to the actuators.
+
+Noticed that agent program only takes the current precept rathe than the entire
+history of percepts -- that is different from agent function.
+
+This agent program could be some sort of table based agent:
+
+```js
+function tableBasedAgent(percept) {
+  // assume we have a huge look up table on how agent should act according
+  // to this hash table
+  return lookUpTable[percept];
+}
+```
+
+Now this table-based agent is doomed to failure. Consider taxi driving, it is
+impossible to contain the entire action to percept in a look up table. No physical
+storage can allow you to store entire states!
+
+Despite all, table-based agent does do what we want: it implements the desired
+agent function. The key challenge for AI is to find out how to write programs that,
+to the extent possible, produce rational behavior from a smallish program rather
+than from a vast table.
+
+In remainder of this lecture, we will outline four basic kinds of agent programs
+that embody the principles underlying almost all intelligent systems:
+
+* Simple reflex agent
+* Model-based reflect agent
+* Goal-based agents
+* Utility-based agents
+
+Simple reflex agent select actions on the basis of the current percept, ignoring
+the rest of the percept history. For example, you will hit break when you see the
+car in the front breaks.
+
+Simple reflex have the admirable property of being simple, but they turn out to
+be limited intelligence. The agent only work if the correct decision can be made
+on the basis of only the current percept -- that is, only if the environment is
+fully observable.
+
+One can certainly use some randomized move to avoid define all possible rules.
+But randomized agent is usually not considered to be rational even though
+sometimes it may outperform the sophisticated deterministic agents.
+
+```js
+function simpleReflexAgent(percept) {
+  // rules is a set of condition-action rules
+  var state = interpretInput(percept);
+  var rule = ruleMatch(state, rules);
+  return rule.ACTION;
+}
+```
+
+A simple graph to visualize how this agent react to environment would be:
+
+```
+Simple Reflex Agent          Environment
++-----------------------+    +----+
+|              sensor <-+----+--  |
+|                |      |    |    |
+|    +-----------+----+ |    |    |
+|    | what the world | |    |    |
+|    | is like now    | |    |    |
+|    +-----------+----+ |    |    |
+|                |      |    |    |
+|    +-----------+----+ |    |    |
+|    | what action I  | |    |    |
+|    | should do now  | |    |    |
+|    +-----------+----+ |    |    |
+|                |      |    |    |
+|            actuator --+----+->  |
++-----------------------+    +----+
+```
+
+### Model-based reflex agents
+
+To handle partial observability is for the agent to keep track of the part of the
+world it cant see now. That is, the agent should maintain some sort of internal
+state that depends on the percept history and thereby reflects at least some of the
+unobserved aspects of the current state.
+
+To update the internal state information as times goes by requires two kind of
+information: some information about how the world evolves independently of the agent
+and some information about how the agent's own actions affect the world.
+
+This notion of "how the world works" is called a **model** of the world.
+
+```js
+// lets say state, model and rules is stored somewhere before
+function modelBasedReflexAgent(percept) {
+  // state, current concept of the world state
+  // model, a description on how the next state depends on current state and action
+  // rules, a set of condition-action rules
+  // action, the most recent action, initially none
+  state = updateState(state, action, percept, model);
+  var rule = ruleMatch(state, rules);
+  return rule.ACTION;
+}
+```
+
+```
+Model based Reflex Agent                   Environment
++-------------------------------------+    +----+
+|    state <---------+       sensor <-+----+--  |
+|                    |         |      |    |    |
+|                  +-+---------+----+ |    |    |
+| How the world ---+>what the world | |    |    |
+| evolves &        | is like now    | |    |    |
+| what action I ---+>               | |    |    |
+| do               +-----------+----+ |    |    |
+|                              |      |    |    |
+|                  +-----------+----+ |    |    |
+|                  | what action I  | |    |    |
+|                  | should do now  | |    |    |
+|                  +-----------+----+ |    |    |
+|                              |      |    |    |
+|                          actuator --+----+->  |
++-------------------------------------+    +----+
+```
+
+### Goal-based agents
+
+Knowing something about current state of the environment is not always enough to
+decide what to do. The correct decision depends on where goal is. In other word,
+as well as a current state description, the agent needs some sort of goal
+information that describes situation that are desirable.
+
+The agent program can combine this with the model (the same information as was used
+in the model based reflex agent) to choose actions that achieve the goal.
+
+Sometimes the goal can be straightforward. For example, when the goal can be
+accomplished in one action. Sometimes it will be more tricky -- for example,
+agent needs to consider long sequences of twists and turns in order to find a way
+to achieve the goal.
+
+Search and planning are the subfields of AI devoted to finding action sequences
+that achieve the agent's goals.
+
+> Note that the action planning here is fundamentally different from the
+condition action rules described earlier, in that it involves consideration of the
+future.
+
+```
+Goal based Agent                           Environment
++-------------------------------------+    +----+
+|    state <---------+       sensor <-+----+--  |
+|                    |         |      |    |    |
+|                  +-+---------+----+ |    |    |
+| How the world -+-+>what the world | |    |    |
+| evolves &      | | is like now    | |    |    |
+| what action I -+-+>               | |    |    |
+| do             | +-----------+----+ |    |    |
+|                |             |      |    |    |
+|                | +-----------+----+ |    |    |
+|                +-+>what will be   | |    |    |
+|                  | if I do action | |    |    |
+|                  +-----------+----+ |    |    |
+|                              |      |    |    |
+|                  +-----------+----+ |    |    |
+|  Goals ----------+>what action I  | |    |    |
+|                  | should do now  | |    |    |
+|                  +-----------+----+ |    |    |
+|                              |      |    |    |
+|                          actuator --+----+->  |
++-------------------------------------+    +----+
+```
+
+### Utility-based agents
+
+Goals alone are not enough to generate high-quality behavior in most environments.
+For example, many action sequences will get the taxi to its destination but some
+are quicker, safer, more reliable.
+
+A more general performance measure should allow a comparison of different world
+states according to exactly how close they are to goal.
+
+We have already seen that a performance measure assigns a score to any given
+sequence of environment states, so it can easily distinguish between more and
+less desirable ways of getting to the goal. An agent's utility function is
+essentially an internalization of the performance measure.
+
+```
+Utility based Agent                        Environment
++-------------------------------------+    +----+
+|    state <---------+       sensor <-+----+--  |
+|                    |         |      |    |    |
+|                  +-+---------+----+ |    |    |
+| How the world -+-+>what the world | |    |    |
+| evolves &      | | is like now    | |    |    |
+| what action I -+-+>               | |    |    |
+| do             | +-----------+----+ |    |    |
+|                |             |      |    |    |
+|                | +-----------+----+ |    |    |
+|                +-+>what will be   | |    |    |
+|                  | if I do action | |    |    |
+|                  +-----------+----+ |    |    |
+|                              |      |    |    |
+|                  +-----------+----+ |    |    |
+|                  | How good I am  | |    |    |
+| Utility ---------+>performing in  | |    |    |
+|                  | such a state   | |    |    |
+|                  +-----------+----+ |    |    |
+|                              |      |    |    |
+|                  +-----------+----+ |    |    |
+|  Goals ----------+>what action I  | |    |    |
+|                  | should do now  | |    |    |
+|                  +-----------+----+ |    |    |
+|                              |      |    |    |
+|                          actuator --+----+->  |
++-------------------------------------+    +----+
+```
+
+### Learning agents
+
+```
+Learning Agent                             Environment
+
+Performance standard
+       |
++------+------------------------------+    +----+
+|      |        +----------- sensor <-+----+--  |
+|   Critic <----+              |      |    |    |
+|      |                       |      |    |    |
+|      |                       |      |    |    |
+|      | feedback              |      |    |    |
+|      |                       |      |    |    |
+|      |                       |      |    |    |
+|      |                       |      |    |    |
+|      |  changes  +-----------+----+ |    |    |
+|  Learning -------+>Performance    | |    |    |
+|  element  <------+ element        | |    |    |
+|      | knowledge +-+---------+----+ |    |    |
+|  Problem           |         |      |    |    |
+|  generator --------+     actuator --+----+->  |
++-------------------------------------+    +----+
+```
+
 ## Further Learning
 
 ### [Test-Driven-Development][tdd]
