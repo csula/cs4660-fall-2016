@@ -7,13 +7,15 @@
 * Knowledge representation meaning
 * Graph as data structure
 * Homework 1 announcement
+* Rational agent
+* Knowledge representation/formulating problem
 
 ## Metrics/Desired Outcomes
 
 * Complexity analysis (space and/or time)
 * Understanding Graph as data structure
 * Using graph for general problem solving
-* Basic graph traversal (overview)
+* Understand rationality
 
 ### Data structures intro
 
