@@ -62,7 +62,7 @@ like `git push personal homework1`
 
 Click on the above red area to create a new pull request.
 
-![pull request example](imgs/spull-request-example-2.png)
+![pull request example](imgs/pull-request-example-2.png)
 
 And your compare branch should be the branch you made changes of while the base
 branch should be master.
