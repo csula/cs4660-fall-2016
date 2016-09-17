@@ -153,7 +153,7 @@ we will cover later.
 
 ### Depth First Search (DFS)
 
-![DFS](Depth-First-Search.gif)
+![DFS](imgs/Depth-First-Search.gif)
 
 #### Pseudocode
 
