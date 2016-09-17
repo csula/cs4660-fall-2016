@@ -66,7 +66,7 @@ The schedule below is tentative and is subject to change.
 | 1  [08/27]         | [Introduction][1] | Set up environment |
 | 2  [09/03]         | [Graph representation][2] |  |
 | 3  [09/10]         | [Graph representation][2] |  |
-| 4  [09/17]         | [BFS, DFS][3] | [Homework 1][9], Quiz 1 |
+| 4  [09/17]         | [BFS, DFS][10] | [Homework 1][9], Quiz 1 |
 | 5  [09/24]         | [Dijkstra search][3] |  |
 | 6  [10/01]         | [Heuristic search][4] |  |
 | 7  [10/08]         | [Heuristic search][4] |  |
@@ -89,3 +89,4 @@ The schedule below is tentative and is subject to change.
 [7]: notes/monte-carlo-tree-search.md
 [8]: notes/project.md
 [9]: notes/homeworks/homework1.md
+[10]: notes/problem-searching.md
