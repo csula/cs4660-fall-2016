@@ -1,6 +1,7 @@
 package csula.cs4660.graphs;
 
 import csula.cs4660.graphs.representations.Representation;
+import csula.cs4660.graphs.searches.SearchStrategy;
 
 import java.util.List;
 import java.util.Optional;
@@ -79,6 +80,14 @@ public class Graph {
      */
     public Optional<Node> getNode(int index) {
         return strategy.getNode(index);
+    }
+
+    /**
+     * Search through this graph from sourceNode to distNode and return a list
+     * of edges in between
+     */
+    public List<Edge> search(SearchStrategy strategy, Node source, Node dist) {
+        return strategy.search(this, source, dist);
     }
 
     @Override
