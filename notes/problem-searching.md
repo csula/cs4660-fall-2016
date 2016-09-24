@@ -172,7 +172,8 @@ function DFS(current, accum) {
     accum.add(current);
     return accum;
   } else if (current.children.legnth === 0) {
-    return [];
+    accum.remove(current);
+    return accum;
   }
   
   for (n: current.children) {
