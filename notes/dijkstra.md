@@ -3,7 +3,8 @@
 ## Objectives
 
 * Homework 1 solution and discussion
-* Best-first algorithm
+* Bot saving princess solution and discussion
+* Best-first(uniform cost) search algorithm
 * Understand Dijkstra's algorithm
 * Implement Dijkstra's algorithm
 * Understand difference of BFS and Dijkstra's algorithm
@@ -25,7 +26,40 @@
     * Assigning 1 to as edge value (regardless of the actual edge value from graph-2)
     * `Id` and `index` confusion
 
-### Homework 1 Solution (check this respository)
+### Bot saving princess
+
+See src/main/java/Solution.java
+
+### Best-first search
+
+```js
+function BFS(v) {
+    for (node in G) {
+        node.distance = Number.MAX_VALUE;
+        node.parent = null;
+    }
+
+    // create empty queue Q      
+    var queue = new Queue();
+
+    v.distance = 0;
+    // use priority queue instead of normal queue
+    queue.enqueue(v);
+
+    while (!queue.isEmpty()) {
+        // pop with the lowest total distance one first
+        var u = queue.dequeue();
+
+        for (node in Graph.neighbors(u)) {
+            if (node.distance == Number.MAX_VALUE) {
+                node.distance = u.distance + edge.value
+                node.parent = u;
+                queue.enqueue(node);
+            }
+        }
+    }
+}
+```
 
 ## Dijkstra's Algorithm
 
