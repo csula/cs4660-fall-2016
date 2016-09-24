@@ -168,20 +168,17 @@ function DFS(current) {
 
 function DFS(current, accum) {
   // base cases
+  var children = current.children;
   if (current == goal) {
     accum.add(current);
-    return accum;
-  } else if (current.children.legnth === 0) {
+  } else if (children.legnth === 0) {
     accum.remove(current);
-    return accum;
   }
   
-  for (n: current.children) {
-    if (!n.isDiscovered) {
-      n.isDiscovered = true;
-      accum.add(current);
-      return DFS(n, accum);
-    }
+  if (!children.head.isDiscovered) {
+    n.isDiscovered = true;
+    accum.add(current);
+    return DFS(children, accum);
   }
 }
 ```
