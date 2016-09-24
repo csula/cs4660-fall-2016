@@ -16,8 +16,8 @@ Here is a quick review of [lessson 2](../notes/general-search.md)
 
 Below is the graph visualization, you should use this homework description to debug the graph traversal in BFS and DFS.
 
-![Graphs](homework-2-graphs.png)
-![Trees](homework-2-trees.png)
+![Graphs](imgs/homework-2-graphs.png)
+![Trees](imgs/homework-2-trees.png)
 
 **Example**
 
