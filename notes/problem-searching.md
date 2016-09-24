@@ -187,8 +187,11 @@ function BFS(v) {
         node.parent = null;
     }
 
-    // create empty queue Q      
+    // create empty queue Q
     var queue = new Queue();
+    // Best first search - use priority queue (lowest number goes first)
+    var result = [];
+    var endTile = null;
 
     v.distance = 0;
     queue.enqueue(v);
@@ -202,10 +205,20 @@ function BFS(v) {
                 // note that I'm leaving edge value up to
                 // you to implement
                 node.parent = u;
+                if (Graph.isGoal(node)) {
+                  endTile = u;
+                }
                 queue.enqueue(node);
             }
         }
     }
+    // back trace from goal to start
+    while (endTile.parent != null) {
+      result.add(Edge(endTile.parent, endTile));
+      endTile = endTile.parent;
+    }
+    // remember to reverse the result before return
+    return result.reverse();
 }
 ```
 
