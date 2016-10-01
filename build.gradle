@@ -20,3 +20,9 @@ test {
     // show standard out and standard error of the test JVM(s) on the console
     testLogging.showStandardStreams = true
 }
+
+task wgcfGame(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+
+    main = 'csula.cs4660.games.WGCFGame'
+}
