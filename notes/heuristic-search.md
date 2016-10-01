@@ -154,3 +154,11 @@ function search(node, g, bound) {
   return min
 }
 ```
+
+### Exercise: Wolf Goat Cabbage Farmer game
+
+play game: http://jeux.lulu.pagesperso-orange.fr/html/anglais/loupChe/loupChe1.htm
+
+xkcd solution: http://xkcd.com/1134/
+
+Please implement WGCFGameAgent and WGCFGameAgentLevel2 with BFS, and A*;
