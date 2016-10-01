@@ -1,5 +1,63 @@
 # Heuristic Search
 
+## Objective
+
+* Levels of optimization
+* A* search
+* Exercise
+
+## Metrics
+
+* Able to implement search against GWCF game
+
+## Levels of optimization
+
+### Depth-limited search
+
+```js
+function depthLimitedSearch(problem, limit) {
+  return recursiveDLS(problem.initialState, problem, limit);
+}
+
+function recursiveDLS(node, problem, limit) {
+  if (problem.goalTest(node))
+    return solution(node);
+  if (limit == 0) {
+    return cutoff;
+  }
+  var cutoffOccurred = false;
+  for (action in problem.actions(node)) {
+    var childNode = childNode(problem, node, action);
+    var result = recursiveDLS(child, problem, limit - 1);
+    if (result == cutoff) {
+      cutoffOccurred = true;
+    } else if (result != failure) {
+      return result;
+    }
+  }
+  if (cutoffOccurred) {
+    return cutoff;
+  } else {
+    return failure;
+  }
+}
+```
+
+### Iterative deepening depth-first search
+
+```js
+function iterativeDeepeningDFS(problem) {
+  for (var depth = 0; depth < INTEGER.MAX_VALUE; depth ++) {
+    var result = depthLimitedSearch(problem, depth);
+    if (result != cutoff) {
+      return result;
+    }
+  }
+}
+```
+
+### Continue back to heuristic search
+
 Sometimes also being called **informed search** -- one that uses problem-specific
 knowledge beyond the definition of the problem itself -- can find solutions more
 efficiently than uninformed strategy.
