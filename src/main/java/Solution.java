@@ -46,7 +46,9 @@ public class Solution {
         Map<Tile, Tile> parents = new HashMap<>();
         Tile endTile = new Tile();
 
+        // open set
         Queue<Tile> frontier = new LinkedList<>();
+        // closed set
         Collection<Tile> exploredSet = new LinkedList<>();
 
         exploredSet.add(startTile);
