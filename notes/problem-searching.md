@@ -163,22 +163,17 @@ we will cover later.
 DFS(startNode);
 
 function DFS(current) {
-  return DFS(current, []);
+  return DFS(current, {});
 }
 
-function DFS(current, accum) {
-  // base cases
-  var children = current.children;
-  if (current == goal) {
-    accum.add(current);
-  } else if (children.legnth === 0) {
-    accum.remove(current);
-  }
-  
-  if (!children.head.isDiscovered) {
-    n.isDiscovered = true;
-    accum.add(current);
-    return DFS(children, accum);
+function DFS(current, parents) {
+  for (child in chilren) {
+    if (child.isDiscovered) {
+      continue;
+    }
+    child.isDiscovered = true;
+    parents.put(current, child);
+    DFS(child, parents);
   }
 }
 ```
