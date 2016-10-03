@@ -18,10 +18,10 @@ import java.util.Optional;
 public class AdjacencyList implements Representation {
     private Map<Node, Collection<Edge>> adjacencyList;
 
-    public AdjacencyList(File file) {
+    protected AdjacencyList(File file) {
     }
 
-    public AdjacencyList() {
+    protected AdjacencyList() {
 
     }
 
