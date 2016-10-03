@@ -7,7 +7,7 @@ import csula.cs4660.graphs.Node;
 import java.util.List;
 
 /**
- * Created by eric on 9/24/16.
+ * Breadth first search
  */
 public class BFS implements SearchStrategy {
     @Override

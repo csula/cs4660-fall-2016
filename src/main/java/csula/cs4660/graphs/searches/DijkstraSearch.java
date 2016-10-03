@@ -7,7 +7,7 @@ import csula.cs4660.graphs.Node;
 import java.util.List;
 
 /**
- * Created by eric on 9/24/16.
+ * As name, dijkstra search using graph structure
  */
 public class DijkstraSearch implements SearchStrategy {
     @Override
