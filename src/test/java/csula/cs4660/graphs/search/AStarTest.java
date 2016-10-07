@@ -156,7 +156,7 @@ public class AStarTest {
                     graph.search(
                         new AstarSearch(),
                         new Node<>(new Tile(4, 0, "@1")),
-                        new Node<>(new Tile(201, 3, "@4")))
+                        new Node<>(new Tile(6, 201, "@4")))
                 );
                 assertEquals(
                     "Test grid 4 number of S",
@@ -183,7 +183,7 @@ public class AStarTest {
                     graph.search(
                         new AstarSearch(),
                         new Node<>(new Tile(4, 0, "@1")),
-                        new Node<>(new Tile(206, 201, "@5")))
+                        new Node<>(new Tile(201, 206, "@5")))
                 );
                 assertEquals(
                     "Test grid 5 number of S",
