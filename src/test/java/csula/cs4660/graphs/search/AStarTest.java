@@ -95,15 +95,32 @@ public class AStarTest {
     public void testAStar2() {
         Arrays.stream(graph2s)
             .forEach(graph -> {
+                String result = Parser.converEdgesToAction(
+                    graph.search(
+                        new AstarSearch(),
+                        new Node<>(new Tile(3, 0, "@1")),
+                        new Node<>(new Tile(13, 0, "@8")))
+                );
+                String expectedOutput = "SSSSEEEEEEEEEEEEENNWNWNW";
                 assertEquals(
-                    "Test A* on graph 2",
-                    "SSSSEEEEEEEEEEEEENNWNWNW",
-                    Parser.converEdgesToAction(
-                        graph.search(
-                            new AstarSearch(),
-                            new Node<>(new Tile(3, 0, "@1")),
-                            new Node<>(new Tile(13, 0, "@8")))
-                    )
+                    "Test grid 2 number of S",
+                    findNumberOfCharacter(expectedOutput, "([N])"),
+                    findNumberOfCharacter(result, "([N])")
+                );
+                assertEquals(
+                    "Test grid 2 number of S",
+                    findNumberOfCharacter(expectedOutput, "([E])"),
+                    findNumberOfCharacter(result, "([E])")
+                );
+                assertEquals(
+                    "Test grid 2 number of S",
+                    findNumberOfCharacter(expectedOutput, "([W])"),
+                    findNumberOfCharacter(result, "([W])")
+                );
+                assertEquals(
+                    "Test grid 2 number of E",
+                    findNumberOfCharacter(expectedOutput, "([S])"),
+                    findNumberOfCharacter(result, "([S])")
                 );
             });
 
@@ -139,7 +156,7 @@ public class AStarTest {
                     graph.search(
                         new AstarSearch(),
                         new Node<>(new Tile(4, 0, "@1")),
-                        new Node<>(new Tile(201, 1, "@4")))
+                        new Node<>(new Tile(201, 3, "@4")))
                 );
                 assertEquals(
                     "Test grid 4 number of S",
