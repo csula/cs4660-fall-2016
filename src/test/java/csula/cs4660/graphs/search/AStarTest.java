@@ -65,6 +65,56 @@ public class AStarTest {
         return graphs;
     }
 
+    @Test
+    public void warmUpSearches() {
+        Arrays.stream(graph1s)
+            .forEach(graph -> {
+                Parser.converEdgesToAction(
+                    graph.search(
+                        new AstarSearch(),
+                        new Node<>(new Tile(3, 0, "@1")),
+                        new Node<>(new Tile(4, 4, "@6")))
+                );
+            });
+        Arrays.stream(graph2s)
+            .forEach(graph -> {
+                Parser.converEdgesToAction(
+                    graph.search(
+                        new AstarSearch(),
+                        new Node<>(new Tile(3, 0, "@1")),
+                        new Node<>(new Tile(13, 0, "@8")))
+                );
+            });
+        Arrays.stream(graph3s)
+            .forEach(graph -> {
+                Parser.converEdgesToAction(
+                    graph.search(
+                        new AstarSearch(),
+                        new Node<>(new Tile(3, 0, "@1")),
+                        new Node<>(new Tile(2, 7, "@2")))
+                );
+            });
+        Arrays.stream(graph4s)
+            .forEach(graph -> {
+                Parser.converEdgesToAction(
+                    graph.search(
+                        new AstarSearch(),
+                        new Node<>(new Tile(4, 0, "@1")),
+                        new Node<>(new Tile(6, 201, "@4")))
+                );
+            });
+        Arrays.stream(graph5s)
+            .forEach(graph -> {
+                Parser.converEdgesToAction(
+                    graph.search(
+                        new AstarSearch(),
+                        new Node<>(new Tile(4, 0, "@1")),
+                        new Node<>(new Tile(201, 206, "@5")))
+                );
+            });
+        System.out.println("Warn up searches spends " + timer.stop());
+    }
+
     @Before
     public void setUp() {
         classLoader = getClass().getClassLoader();
