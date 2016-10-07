@@ -66,7 +66,7 @@ public class AStarTest {
     }
 
     @Test
-    public void warmUpSearches() {
+    public void aWarmUpSearches() {
         Arrays.stream(graph1s)
             .forEach(graph -> {
                 Parser.converEdgesToAction(
