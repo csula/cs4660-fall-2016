@@ -29,8 +29,7 @@ public class AStarTest {
     Graph[] graph4s;
     Graph[] graph5s;
 
-    @Test
-    // a dummy test to warm up JVM machine about variables we use
+    @Before
     public void warmup() {
         File file1 = new File(classLoader.getResource("homework-2/grid-1.txt").getFile());
         File file2 = new File(classLoader.getResource("homework-2/grid-2.txt").getFile());
