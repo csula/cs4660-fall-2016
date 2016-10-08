@@ -71,7 +71,7 @@ The schedule below is tentative and is subject to change.
 | 6  [10/01]         | [Heuristic search][4] |  |
 | 7  [10/08]         | [Heuristic search][4] |  |
 | 8  [10/15]         | [Minimax][5] | [Homework 2][11], Quiz 2 |
-| 9  [10/22]         | [Minimax][5] |  |
+| 9  [10/22]         | [Minimax][5] | No class |
 | 10 [10/29]         | [Alpha-beta pruning][6] | Homework 3 |
 | 11 [11/05]         | [Alpha-beta pruning][6] |  |
 | 12 [11/12]         | [Monte Carlo Tree Search][7] | Quiz 3 |
