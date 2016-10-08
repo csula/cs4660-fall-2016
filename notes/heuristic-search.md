@@ -220,3 +220,100 @@ play game: http://jeux.lulu.pagesperso-orange.fr/html/anglais/loupChe/loupChe1.h
 xkcd solution: http://xkcd.com/1134/
 
 Please implement WGCFGameAgent and WGCFGameAgentLevel2 with BFS, and A*;
+
+### Wolf Goat Cabbage Farmer game discussion
+
+TBD.
+
+### Homework discussion
+
+TBD.
+
+### Heuristic function design
+
+The heuristic function can be used to control A* search behavior:
+
+1. If the heuristic function always returns 0, A* will perform the same as Dijkstra search algorithm -- which is guaranteed to find the shortest path.
+2. If the heuristic function is always lower than (or equals to) the cost moving from node n to goal, then A* is also guaranteed to find the shortest path. The lower value heuristic function returns the more nodes it expands and thus slower.
+3. If the heuristic function always returns the actual cost from node n to goal, then A* will only travel along the best possible path and nothing else. This is often not possible unless under some certain conditions. It's good to know that A* can perform perfectly at some cases.
+4. If the heuristic function returns the value sometimes larger than the actual cost, A* is not sure to get the shortest path but it can run faster.
+5. At the extreme case, if heuristic function returns way larger value than the actual cost, A* behaves like greedy-best-first-search.
+
+We come to an interesting case, we can adjust our heuristic function to aim for performance or accuracy. Say if you are building a game agent that has to find path all the time but doesn't need always find the best path, you might increase the heuristic cost a bit for better performance.
+
+
+#### Grid map heuristic functions
+
+##### Manhattan distance
+
+```js
+function heuristic(node, goal) {
+  var dx = Math.abs(node.x - goal.x);
+  var dy = Math.abs(node.y - goal.y);
+  // D is a scale value for you to adjust performance vs accuracy
+  return D * (dx + dy);
+}
+```
+
+When allowing diagonal movement consider the following heuristic function:
+
+```js
+// use when allowing diagonal movements between grid tiles
+function heuristic(node, goal) {
+  var dx = Math.abs(node.x - goal.x);
+  var dy = Math.abs(node.y - goal.y);
+  return D * (dx + dy) + (D2 - 2 * D) * min(dx, dy);
+}
+```
+
+> When D and D2 = 1, this is called Chebyshev distance.  
+> When D = 1 and D2 = sqrt(2), this is called the octile distance.
+
+##### Euclidean distance
+
+```js
+function heuristic(node, goal) {
+  var dx = Math.abs(node.x - goal.x);
+  var dy = Math.abs(node.y - goal.y);
+  return D * Math.sqrt(dx * dx + dy * dy);
+}
+```
+
+However, for this case, since the Euclidean distance is always shorter than the actual cost. You will get the shortest path with the cost of running slower.
+
+### A* toward multiple goals
+
+What happens when you want to search A* toward multiple goals?
+
+You can adjust your A* search heuristic to take multiple heuristic functions and work toward the shortest one!
+
+### Tie breaker
+
+What happened when you have tie between the F value, your A* search algorithm start to go off random places!
+
+How do we deal with this situation?
+
+We can adjust the heuristic value slightly. For example, we can multiple the heuristic values we get from the function by 1%!
+
+> The factor we choose should be less than `(minimal steps to goal)/(maximum steps to goal)`
+
+Or another modification to the tie breaker is always prefer the newly inserted node than the old nodes!
+
+Credit: http://theory.stanford.edu/~amitp/GameProgramming/Heuristics.html
+
+More visualization notes: http://www.redblobgames.com/pathfinding/a-star/introduction.html
+
+### Performance improvement of A*
+
+> When we talk about performance, the first thing is to **monitor** (or sometimes called profiling your methods)
+
+For the A* search algorithm, we have a couple ways we can optimize the run time:
+
+* Decrease the size of graph. Generalizing the graph like [navigation mesh](http://theory.stanford.edu/~amitp/GameProgramming/MapRepresentations.html#polygonal-maps)
+* Adjust heuristic (as discussed above)
+* Make priority queue faster (what other data structure we can use for priority queue? *ahem* heap!)
+* Cache heuristic function value?
+
+### More example of path finding
+
+https://www.kevanahlquist.com/osm_pathfinding/
