@@ -199,25 +199,22 @@ public class AStarTest {
     public void testAStar4() {
         String expectedOutput = "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSESE";
 
-        Arrays.stream(graph4s)
-            .forEach(graph -> {
-                String result = Parser.converEdgesToAction(
-                    graph.search(
-                        new AstarSearch(),
-                        new Node<>(new Tile(4, 0, "@1")),
-                        new Node<>(new Tile(6, 201, "@4")))
-                );
-                assertEquals(
-                    "Test grid 4 number of S",
-                    findNumberOfCharacter(expectedOutput, "([S])"),
-                    findNumberOfCharacter(result, "([S])")
-                );
-                assertEquals(
-                    "Test grid 4 number of E",
-                    findNumberOfCharacter(expectedOutput, "([E])"),
-                    findNumberOfCharacter(result, "([E])")
-                );
-            });
+        String result = Parser.converEdgesToAction(
+            graph4s[0].search(
+                new AstarSearch(),
+                new Node<>(new Tile(4, 0, "@1")),
+                new Node<>(new Tile(6, 201, "@4")))
+        );
+        assertEquals(
+            "Test grid 4 number of S",
+            findNumberOfCharacter(expectedOutput, "([S])"),
+            findNumberOfCharacter(result, "([S])")
+        );
+        assertEquals(
+            "Test grid 4 number of E",
+            findNumberOfCharacter(expectedOutput, "([E])"),
+            findNumberOfCharacter(result, "([E])")
+        );
 
         System.out.println("A star 4 spends " + timer.stop());
     }
@@ -226,25 +223,22 @@ public class AStarTest {
     public void testAStar5() {
         String expectedOutput = "SSSSSSSSSSEESSEESESESSEESSEESESESESESSEESESESESESESSESEESESESSESEESSEESSEESESESESESSESEESSESESEESSESEESESSESEESESESESESSEESESESESESESESESESSEESESESESESESSEESSEESESSESEESSEESESSEESESESESESESSEESESESSEESESSESEESSEESESESESSEESSESEESESSESESESESEESSEESESESESESESESESESESESESESESESSEESESSEESSEESESESESSEESESESSEESESESSEESESESESESESESESESESESESESSESEESSEESESSEESESSEESSEESESSEESESESESESESESESESESSEESEEEESSSSSE";
 
-        Arrays.stream(graph5s)
-            .forEach(graph -> {
-                String result = Parser.converEdgesToAction(
-                    graph.search(
-                        new AstarSearch(),
-                        new Node<>(new Tile(4, 0, "@1")),
-                        new Node<>(new Tile(201, 206, "@5")))
-                );
-                assertEquals(
-                    "Test grid 5 number of S",
-                    findNumberOfCharacter(expectedOutput, "([S])"),
-                    findNumberOfCharacter(result, "([S])")
-                );
-                assertEquals(
-                    "Test grid 5 number of E",
-                    findNumberOfCharacter(expectedOutput, "([E])"),
-                    findNumberOfCharacter(result, "([E])")
-                );
-            });
+        String result = Parser.converEdgesToAction(
+            graph5s[0].search(
+                new AstarSearch(),
+                new Node<>(new Tile(4, 0, "@1")),
+                new Node<>(new Tile(201, 206, "@5")))
+        );
+        assertEquals(
+            "Test grid 5 number of S",
+            findNumberOfCharacter(expectedOutput, "([S])"),
+            findNumberOfCharacter(result, "([S])")
+        );
+        assertEquals(
+            "Test grid 5 number of E",
+            findNumberOfCharacter(expectedOutput, "([E])"),
+            findNumberOfCharacter(result, "([E])")
+        );
 
         System.out.println("A star 5 spends " + timer.stop());
     }
