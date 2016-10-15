@@ -17,6 +17,8 @@ Implement BFS search to find path to state starting from
 
 > updated at 11am Oct 15
 
+> For Dikjstra search, you will need to take the event effect (edge cost) into the consideration. Find out the best path that returns the highest value (or lowest cost)
+
 You will have to modify App.java to find the answer.
 
 Please submit `solution.txt` containing link to your App.java and path from initial state to desination state to CSNS when you are done:
@@ -28,10 +30,16 @@ Example of `solution.txt`:
 ```
 link to my solution: https://github.com/csula-students/cs-4660-fall-homework-rcliao/blob/master/src/main/java/csula/cs4660/exercises/FileRead.java
 
-Path:
+BFS Path:
 
 Empty Room
 Dark Room
+...
+
+Dijkstra Path:
+
+Empty Room
+Dire Tomb
 ...
 ```
 

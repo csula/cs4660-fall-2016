@@ -34,3 +34,10 @@ task wgcfGame(type: JavaExec) {
     main = 'csula.cs4660.games.WGCFGame'
 }
 
+
+task quiz(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+
+    main = 'csula.cs4660.quizes.App'
+}
+
