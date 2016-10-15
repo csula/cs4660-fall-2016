@@ -12,8 +12,10 @@ Your job is to find a way out from this empty room to a dark room containing the
 
 ## Technical requirement
 
-Implement BFS search to find path to state starting from 
+Implement BFS & Dijkstra to find path to state starting from 
 `10a5461773e8fd60940a56d2e9ef7bf4` to `0c32523e344445c79fad7e3c59eb75b0`
+
+> For Dikjstra search, you will need to take the event effect (edge cost) into the consideration. Find out the best path that returns the highest value (or lowest cost)
 
 You will have to modify App.java to find the answer.
 
@@ -26,10 +28,16 @@ Example of `solution.txt`:
 ```
 link to my solution: https://github.com/csula-students/cs-4660-fall-homework-rcliao/blob/master/src/main/java/csula/cs4660/exercises/FileRead.java
 
-Path:
+BFS Path:
 
 Empty Room
 Dark Room
+...
+
+Dijkstra Path:
+
+Empty Room
+Dire Tomb
 ...
 ```
 
