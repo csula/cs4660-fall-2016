@@ -13,7 +13,9 @@ Your job is to find a way out from this empty room to a dark room containing the
 ## Technical requirement
 
 Implement BFS search to find path to state starting from 
-`10a5461773e8fd60940a56d2e9ef7bf4` to `0c32523e344445c79fad7e3c59eb75b0`
+`10a5461773e8fd60940a56d2e9ef7bf4` to `e577aa79473673f6158cc73e0e5dc122`
+
+> updated at 11am Oct 15
 
 You will have to modify App.java to find the answer.
 
