@@ -32,14 +32,12 @@ link to my solution: https://github.com/csula-students/cs-4660-fall-homework-rcl
 
 BFS Path:
 
-Empty Room
-Dark Room
+Empty Room:Hall Way:-30
 ...
 
 Dijkstra Path:
 
-Empty Room
-Dire Tomb
+Empty Room:Hall Way:-30
 ...
 ```
 
