@@ -2,7 +2,7 @@
 
 Total points: 10 pts
 
-Due date: Oct 15th 10:30am (at the end of class)
+Due date: Oct 16th 11:59pm (at the end of day)
 
 ## Context
 
