@@ -49,3 +49,31 @@ graph.search(DFS(), new Node(1), new Node(8));
 * Pass tests for `Dijkstra.java` [2pts]
 * Pass tests for `AstarSearch.java` [3 pts]
 * Distance method under `ObjectOriented.java`, `AdjacencyMatrix.java` and `AdjacencyList.java` [1 pts]
+
+# Feedbacks
+
+```
+* Performance tuning
+    * Astar test takes too long to run
+    * Heap size
+* Trouble of implementing Parser
+    * Profile
+    * https://gist.github.com/jboner/2841832
+```
+
+# Best Astar runtime
+
+* 2.2s
+* 2.231s => 2.704s
+* 3.005s => 2.634
+
+
+
+
+
+
+
+
+
+
+
