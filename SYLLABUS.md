@@ -72,10 +72,10 @@ The schedule below is tentative and is subject to change.
 | 7  [10/08]         | [Heuristic search][4] |  |
 | 8  [10/15]         | [Minimax][5] | [Homework 2][11], Quiz 2 |
 | 9  [10/22]         | [Minimax][5] | No class |
-| 10 [10/29]         | [Alpha-beta pruning][6] | Homework 3 |
+| 10 [10/29]         | [Alpha-beta pruning][6] |  |
 | 11 [11/05]         | [Alpha-beta pruning][6] |  |
-| 12 [11/12]         | [Monte Carlo Tree Search][7] | Quiz 3 |
-| 13 [11/19]         | [Monte Carlo Tree Search][7] |  |
+| 12 [11/12]         | [Monte Carlo Tree Search][7] |  |
+| 13 [11/19]         | [Monte Carlo Tree Search][7] | Homework 3, Quiz 3 |
 | 14 [11/26]         | Thanks Giving Holiday | No class |
 | 15 [12/03]         | [Project][8] | Homework 4, Quiz 4 |
 | Final [12/10]      | [Project][8] |  |
