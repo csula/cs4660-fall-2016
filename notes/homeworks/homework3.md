@@ -6,8 +6,8 @@ Continue from your homework 2 and branch out a `homework-3` branch. And most of 
 
 **Minimax & Alpha-Beta**
 
-![Minimax](imgs/minimax.png)
-![Alpha-beta](imgs/alpha-beta.png)
+![Minimax](imgs/homework-3-minimax.png)
+![Alpha-beta](imgs/homework-3-alpha-beta.png)
 
 Your job here is to implement minimax method that will utilize Graph as the data structure before. And in order to find out each node value listed in above graph.
 
