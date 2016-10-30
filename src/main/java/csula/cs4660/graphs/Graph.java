@@ -82,6 +82,10 @@ public class Graph {
         return strategy.getNode(index);
     }
 
+    public Optional<Node> getNode(Node node) {
+        return strategy.getNode(node);
+    }
+
     /**
      * Search through this graph from sourceNode to distNode and return a list
      * of edges in between

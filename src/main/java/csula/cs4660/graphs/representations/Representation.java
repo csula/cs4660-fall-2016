@@ -63,6 +63,7 @@ public interface Representation {
     int distance(Node from, Node to);
 
     Optional<Node> getNode(int index);
+    Optional<Node> getNode(Node node);
 
     String toString();
 }
