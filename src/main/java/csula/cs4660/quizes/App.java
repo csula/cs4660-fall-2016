@@ -98,6 +98,7 @@ public class App {
             result.put(c, distances.get(c));
             c = parents.get(c);
         }
+        result.put(c, distances.get(c));
 
         return result;
     }
