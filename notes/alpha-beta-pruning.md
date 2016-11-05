@@ -8,6 +8,10 @@
 
 * Implement alpha-beta pruning example
 
+### References
+
+http://inst.eecs.berkeley.edu/~cs61b/fa14/ta-materials/apps/ab_tree_practice/
+
 ### Adversarial Search
 
 We now consider something called `Adversarial Search`.  If `Min` and `Max` are adversaries so they will compete with each other at each move by selecting the best `option` while considering the opponent's next move.
