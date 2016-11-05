@@ -29,3 +29,8 @@ In addition to minimax, you will also need to implement alpha-beta pruning.
 * Pass `AlphaBetaTest.java` [5 pts]
     * Pass all unit tests [3 pts]
     * Coding style and minor details [2 pts]
+    
+    
+## References
+
+http://inst.eecs.berkeley.edu/~cs61b/fa14/ta-materials/apps/ab_tree_practice/
