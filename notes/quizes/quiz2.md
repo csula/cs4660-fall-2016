@@ -140,3 +140,27 @@ State{id='925cc86f5ce88acbd27a32a6fae32658', location=Location{name='Dire Tombs'
 State{id='adfb3580809a2354f02ba36a07f6b297', location=Location{name='Room with cage', description='null'}, neighbors=[]}:330
 State{id='e577aa79473673f6158cc73e0e5dc122', location=Location{name='Dark Room', description='null'}, neighbors=[]}:330
 ```
+
+## Extra Credit
+
+4 points
+
+Goal:
+
+Define Astar Search with heuristic function.
+
+Here are the recommended steps:
+
+1. Modify your existing Dijkstra search to Astar Search
+2. Define your heuristic search to optimize the value of events (aka. your final path should be the same as Dijkstra) (Total values should be greater than 250)
+3. Modify your App.java to monitor how many requests your code sends. 
+  * If you are using Graph.java class. Monitor how many nodes you traverse through in your code.
+  
+Expected outcome:
+
+You should submit a single solution.txt contains the following:
+
+1. Your source code link
+2. Your reasoning of heuristic function
+3. How many nodes you traverse through in Dijkstra vs Astar
+4. What is the final path of Dijkstra vs Astar
