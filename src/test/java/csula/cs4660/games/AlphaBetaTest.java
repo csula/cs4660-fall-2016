@@ -62,45 +62,51 @@ public class AlphaBetaTest {
 
     @Test
     public void sanityCheck() {
-        assertEquals(new Node<>(new MiniMaxState(15, 8)), graph.getNode(new Node<>(new MiniMaxState(15, 0))).get());
-        assertEquals(new Node<>(new MiniMaxState(29, 6)), graph.getNode(new Node<>(new MiniMaxState(29, 0))).get());
+        assertEquals(
+            new Node<>(new MiniMaxState(15, 8)).getData().getValue(),
+            ((MiniMaxState) graph.getNode(new Node<>(new MiniMaxState(15, 0))).get().getData()).getValue()
+        );
+        assertEquals(
+            new Node<>(new MiniMaxState(29, 6)).getData().getValue(),
+            ((MiniMaxState) graph.getNode(new Node<>(new MiniMaxState(29, 0))).get().getData()).getValue()
+        );
     }
 
     @Test
     public void testGetBestMove() throws Exception {
         assertEquals(
-            new Node<>(new MiniMaxState(1, -13)),
-            AlphaBeta.getBestMove(graph, new Node<>(new MiniMaxState(0, 0)), 4, Integer.MIN_VALUE, Integer.MAX_VALUE, true)
+            new Node<>(new MiniMaxState(1, -13)).getData().getValue(),
+            ((MiniMaxState) AlphaBeta.getBestMove(graph, new Node<>(new MiniMaxState(0, 0)), 4, Integer.MIN_VALUE, Integer.MAX_VALUE, true).getData()).getValue()
         );
 
         // check after effect
         assertEquals(
-            new Node<>(new MiniMaxState(3, -8)),
-            graph.getNode(new Node<>(new MiniMaxState(3, 0))).get()
+            new Node<>(new MiniMaxState(3, -8)).getData().getValue(),
+            ((MiniMaxState) graph.getNode(new Node<>(new MiniMaxState(3, 0))).get().getData()).getValue()
         );
         assertEquals(
-            new Node<>(new MiniMaxState(1, -13)),
-            graph.getNode(new Node<>(new MiniMaxState(1, 0))).get()
+            new Node<>(new MiniMaxState(1, -13)).getData().getValue(),
+            ((MiniMaxState) graph.getNode(new Node<>(new MiniMaxState(1, 0))).get().getData()).getValue()
         );
         assertEquals(
-            new Node<>(new MiniMaxState(2, -14)),
-            graph.getNode(new Node<>(new MiniMaxState(2, 0))).get()
+            new Node<>(new MiniMaxState(2, -14)).getData().getValue(),
+            ((MiniMaxState) graph.getNode(new Node<>(new MiniMaxState(2, 0))).get().getData()).getValue()
         );
         assertEquals(
-            new Node<>(new MiniMaxState(5, -14)),
-            graph.getNode(new Node<>(new MiniMaxState(5, 0))).get()
+            new Node<>(new MiniMaxState(5, -14)).getData().getValue(),
+            ((MiniMaxState) graph.getNode(new Node<>(new MiniMaxState(5, 0))).get().getData()).getValue()
         );
         assertEquals(
-            new Node<>(new MiniMaxState(9, -15)),
-            graph.getNode(new Node<>(new MiniMaxState(9, 0))).get()
+            new Node<>(new MiniMaxState(9, -15)).getData().getValue(),
+            ((MiniMaxState) graph.getNode(new Node<>(new MiniMaxState(9, 0))).get().getData()).getValue()
         );
         assertEquals(
-            new Node<>(new MiniMaxState(6, 0)),
-            graph.getNode(new Node<>(new MiniMaxState(6, 0))).get()
+            new Node<>(new MiniMaxState(6, 0)).getData().getValue(),
+            ((MiniMaxState) graph.getNode(new Node<>(new MiniMaxState(6, 0))).get().getData()).getValue()
         );
         assertEquals(
-            new Node<>(new MiniMaxState(13, 0)),
-            graph.getNode(new Node<>(new MiniMaxState(13, 0))).get()
+            new Node<>(new MiniMaxState(13, 0)).getData().getValue(),
+            ((MiniMaxState) graph.getNode(new Node<>(new MiniMaxState(13, 0))).get().getData()).getValue()
         );
     }
 }
