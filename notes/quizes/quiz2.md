@@ -145,6 +145,8 @@ State{id='e577aa79473673f6158cc73e0e5dc122', location=Location{name='Dark Room',
 
 4 points
 
+Due at Monday (11/28) midnight (11:59pm) after ThanksGiving.
+
 Goal:
 
 Define Astar Search with heuristic function.
