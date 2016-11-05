@@ -166,3 +166,5 @@ You should submit a single solution.txt contains the following:
 2. Your reasoning of heuristic function
 3. How many nodes you traverse through in Dijkstra vs Astar
 4. What is the final path of Dijkstra vs Astar
+
+References: https://github.com/rcliao/text-adventure
