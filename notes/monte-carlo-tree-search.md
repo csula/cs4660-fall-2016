@@ -90,4 +90,4 @@ And the formula to select most important node is as below:
 
 ### Algorithm
 
-![Upper Boundary Tree Search Algorithm](imgs/utc.png)
+![Upper Boundary Tree Search Algorithm](imgs/uct.png)
