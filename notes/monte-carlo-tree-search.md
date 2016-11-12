@@ -1,5 +1,9 @@
 # Monte Carlo Algorithm
 
+![XKCD - state of games](http://imgs.xkcd.com/comics/game_ais.png)
+
+Reference: http://www.xkcd.com/1002/
+
 Previously, we have learned how Minimax works and how to use Alpha-beta pruning
 algorithm to improve the performance of Minimax. You should know how expensive
 Minimax algorithm can be.
