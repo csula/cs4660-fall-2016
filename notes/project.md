@@ -20,7 +20,7 @@ algorithm.
 
 ## Get started
 
-1. Sign up an account at codingame.
+1. Sign up an account at CodinGame.
 2. Choose your programming language and start hacking!
 
 ## Instructions
@@ -53,7 +53,42 @@ With the board state above, you are ready to do some computation!
 First step (most important step) of the game is to not die!
 
 That implies your board state need to be correct and when you move, you cannot move
-onto any "wall" (includes the spaces already being moved to and edge).
+into any "wall" (includes the spaces that is already occupied to and any edge).
 
 Here is a very good starting point for you to implement some strategy of the game: 
 http://csclub.uwaterloo.ca/contest/xiao_strategy.php
+
+Based on the article above: you can summarize down a few requirements of your code:
+
+* Store the board state
+* Store the order of moves (so you know if you move before enemy or what not)
+* [Flood-fill algorithm for evaluation][1]
+* [Minimax algorithm when enemy is close and you have to fight space against it][2]
+* [An algorithm to find longest path in the space][3]
+
+My suggestion is to figure out an order of strategy you want to implement and test.
+This way, you don't need to implement everything all at once and can test your
+implementation one chunk at a time.
+
+In example, you might just want to store the board state and being able to get
+a list of possible moves from the current board state first.
+
+From there, you will soon face a decision on which direction to move toward from
+your list of possible moves above.
+
+To make this decision, you will need to implement some sort of logic to check
+which one is better.
+
+One way to do so is by flood-fill algorithm. From the algorithm you can compare 
+which move (UP DOWN LEFT RIGHT) will take you to move space!
+
+And then next step is to predict opponents' movement in order to block or survive
+even earlier.
+
+After you have all above implementation done, you might want to consider improving
+your code by optimizing runtime performance (so you can process more moves).
+
+[1]: https://en.wikipedia.org/wiki/Flood_fill
+[2]: https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning
+[3]: https://en.wikipedia.org/wiki/Biconnected_component
+
