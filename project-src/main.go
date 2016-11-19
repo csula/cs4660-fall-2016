@@ -2,15 +2,36 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"os"
 	"time"
 )
+
+type node struct {
+	board    [][]int
+	children []node
+	parent   *node
+	n        int
+	w        int
+}
 
 func main() {
 	board := [20][30]int{}
 	for {
 		processTurn(&board)
 	}
+}
+
+func processTurn(board *[20][30]int) {
+	// process and print out the time cost
+	start := time.Now()
+	defer debugTimeUse(start)
+
+	var _, _, x, y = parseInput(board)
+
+	var move = getPossibleMoves(*board, x, y)[0]
+
+	fmt.Println(move) // A single line with UP, DOWN, LEFT or RIGHT
 }
 
 func parseInput(board *[20][30]int) (n, p, x, y int) {
@@ -32,18 +53,6 @@ func parseInput(board *[20][30]int) (n, p, x, y int) {
 	}
 
 	return
-}
-
-func processTurn(board *[20][30]int) {
-	// process and print out the time cost
-	start := time.Now()
-	defer debugTimeUse(start)
-
-	var _, _, x, y = parseInput(board)
-
-	var move = getPossibleMoves(*board, x, y)[0]
-
-	fmt.Println(move) // A single line with UP, DOWN, LEFT or RIGHT
 }
 
 func getPossibleMoves(board [20][30]int, x int, y int) []string {
@@ -77,6 +86,42 @@ func getPossibleMoves(board [20][30]int, x int, y int) []string {
 	return result
 }
 
+func computationBudget(t time.Time) int64 {
+	nanoToMilli := int64(time.Millisecond) / int64(time.Nanosecond)
+	now := time.Now().UnixNano() / nanoToMilli
+	start := t.UnixNano() / nanoToMilli
+	return now - start
+}
+
+func mcts(board [][]int) {
+	rootNode := node{
+		board:    board,
+		children: []node{},
+		parent:   nil,
+		n:        0,
+		w:        0,
+	}
+	bestNode := selection(rootNode)
+	newNode := expand(bestNode)
+	simulation(newNode)
+	backPropagation(newNode)
+}
+
+func selection(rootNode node) *node {
+	c := math.Sqrt(2)
+	return &rootNode
+}
+
+func expand(rootNode *node) *node {
+	return rootNode
+}
+
+func simulation(newNode *node) {
+}
+
+func backPropagation(newNode *node) {
+}
+
 func debugBoard(board [20][30]int) {
 	fmt.Fprintln(os.Stderr, "Board state: ")
 	for i := 0; i < len(board); i++ {
@@ -88,12 +133,5 @@ func debugBoard(board [20][30]int) {
 }
 
 func debugTimeUse(t time.Time) {
-	fmt.Fprintf(os.Stderr, "Main loop time used: %v\n", computationBudget(t))
-}
-
-func computationBudget(t time.Time) int64 {
-	nanoToMilli := int64(time.Millisecond) / int64(time.Nanosecond)
-	now := time.Now().UnixNano() / nanoToMilli
-	start := t.UnixNano() / nanoToMilli
-	return now - start
+	fmt.Fprintf(os.Stderr, "Main loop time used: %v\n", time.Since(t))
 }
